@@ -9,3 +9,12 @@ stages:
     outs:
     - data/prepared/test
     - data/prepared/train
+  train:
+    cmd: Rscript src/train.R
+    deps:
+    - data/prepared/train
+    - src/train.R
+    params:
+    - train
+    outs:
+    - data/model

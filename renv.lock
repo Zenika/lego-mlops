@@ -93,12 +93,61 @@
       "Repository": "CRAN",
       "Hash": "69995aadd5d67dfed56e3760a501ec39"
     },
+    "crayon": {
+      "Package": "crayon",
+      "Version": "1.4.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "e75525c55c70e5f4f78c9960a4b402e9"
+    },
+    "curl": {
+      "Package": "curl",
+      "Version": "4.3",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "2b7d10581cc730804e9ed178c8374bd6"
+    },
+    "digest": {
+      "Package": "digest",
+      "Version": "0.6.27",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "a0cbe758a531d054b537d16dff4d58a1"
+    },
+    "dplyr": {
+      "Package": "dplyr",
+      "Version": "1.0.4",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "01c82e3b053eb7660a8ace8d932265b8"
+    },
+    "ellipsis": {
+      "Package": "ellipsis",
+      "Version": "0.3.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "fd2844b3a43ae2d27e70ece2df1b4e2a"
+    },
+    "fansi": {
+      "Package": "fansi",
+      "Version": "0.4.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "fea074fb67fe4c25d47ad09087da847d"
+    },
     "fs": {
       "Package": "fs",
       "Version": "1.5.0",
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "44594a07a42e5f91fac9f93fda6d0109"
+    },
+    "generics": {
+      "Package": "generics",
+      "Version": "0.1.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "4d243a9c10b00589889fe32314ffd902"
     },
     "glue": {
       "Package": "glue",
@@ -114,12 +163,40 @@
       "Repository": "CRAN",
       "Hash": "bc316c003aba520fc73d70ad53b5fc36"
     },
+    "lifecycle": {
+      "Package": "lifecycle",
+      "Version": "1.0.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "3471fb65971f1a7b2d4ae7848cf2db8d"
+    },
+    "magick": {
+      "Package": "magick",
+      "Version": "2.6.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "ffc87958461a1d2a5ec4b36035b87b94"
+    },
     "magrittr": {
       "Package": "magrittr",
       "Version": "2.0.1",
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "41287f1ac7d28a92f0a286ed507928d3"
+    },
+    "pillar": {
+      "Package": "pillar",
+      "Version": "1.4.7",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "3b3dd89b2ee115a8b54e93a34cd546b4"
+    },
+    "pkgconfig": {
+      "Package": "pkgconfig",
+      "Version": "2.0.3",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "01f28d4278f15c76cddbea05899c5d6f"
     },
     "png": {
       "Package": "png",
@@ -142,6 +219,13 @@
       "Repository": "CRAN",
       "Hash": "ebaed51a03411fd5cfc1e12d9079b353"
     },
+    "purrr": {
+      "Package": "purrr",
+      "Version": "0.3.4",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "97def703420c8ab10d8f0e6c72101e02"
+    },
     "rappdirs": {
       "Package": "rappdirs",
       "Version": "0.3.3",
@@ -163,19 +247,57 @@
       "Repository": "CRAN",
       "Hash": "599df23c40a4fce9c7b4764f28c37857"
     },
-    "torch": {
-      "Package": "torch",
-      "Version": "0.2.1",
+    "tibble": {
+      "Package": "tibble",
+      "Version": "3.0.6",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "8645b85e28a86a8cc71615cd5557b65b"
+      "Hash": "9c6c10e594f32096ede0c7d373ccbddd"
+    },
+    "tidyselect": {
+      "Package": "tidyselect",
+      "Version": "1.1.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "6ea435c354e8448819627cf686f66e0a"
+    },
+    "torch": {
+      "Package": "torch",
+      "Version": "0.2.1.9000",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "mlverse",
+      "RemoteRepo": "torch",
+      "RemoteRef": "master",
+      "RemoteSha": "37f9e4e4c11463179319ddccd9a9a862ddbe3dae",
+      "Hash": "93504f186e95cc88af03f48aaad4fd8e"
     },
     "torchvision": {
       "Package": "torchvision",
-      "Version": "0.2.0",
+      "Version": "0.2.0.9000",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "mlverse",
+      "RemoteRepo": "torchvision",
+      "RemoteRef": "main",
+      "RemoteSha": "55825230a80cde619e7ef81ef59aff463805252a",
+      "Hash": "ba856845129806472a955c99ee147a00"
+    },
+    "utf8": {
+      "Package": "utf8",
+      "Version": "1.1.4",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "711fce61071a2ed15b68314e8db1a08a"
+      "Hash": "4a5081acfb7b81a572e4384a7aaf2af1"
+    },
+    "vctrs": {
+      "Package": "vctrs",
+      "Version": "0.3.6",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "5cf1957f93076c19fdc81d01409d240b"
     },
     "withr": {
       "Package": "withr",

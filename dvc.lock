@@ -23,3 +23,24 @@ prepare_data:
     md5: 500bf14a02d264e14921b81c082149d8.dir
     size: 18560956
     nfiles: 324
+train:
+  cmd: Rscript src/train.R
+  deps:
+  - path: data/prepared/train
+    md5: 500bf14a02d264e14921b81c082149d8.dir
+    size: 18560956
+    nfiles: 324
+  - path: src/train.R
+    md5: b76823ebb048ebb7ea538c9ecc732406
+    size: 2871
+  params:
+    params.yaml:
+      train:
+        input: data/prepared
+        model: data/model
+        batch_size: 16
+        num_epochs: 10
+  outs:
+  - path: data/model
+    md5: 40e9286e47d2532bf86b463a92665f8c
+    size: 45006138

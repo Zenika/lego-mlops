@@ -4,8 +4,10 @@ prepare_data:
   test_output: data/prepared/test
 
 train:
-  input: data/prepared
+  input: data/prepared/train
   model: data/model
+  batch_size: 16
+  num_epochs: 10
 
 evaluate:
   test_dataset: data/prepared/test
