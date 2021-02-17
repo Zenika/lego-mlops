@@ -1,0 +1,11 @@
+stages:
+  prepare_data:
+    cmd: Rscript src/prepare_data.R
+    deps:
+    - data/lego-minifigures-classification
+    - src/prepare_data.R
+    params:
+    - prepare_data
+    outs:
+    - data/prepared/test
+    - data/prepared/train

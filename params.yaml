@@ -1,0 +1,13 @@
+prepare_data:
+  input: data/lego-minifigures-classification
+  train_output: data/prepared/train
+  test_output: data/prepared/test
+
+train:
+  input: data/prepared
+  model: data/model
+
+evaluate:
+  test_dataset: data/prepared/test
+  model: data/model
+  metrics: metrics.json

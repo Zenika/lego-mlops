@@ -2,4 +2,4 @@ outs:
 - md5: a06679457b69c077a789ca5f69953f11.dir
   size: 24474599
   nfiles: 436
-  path: kaggle
+  path: lego-minifigures-classification

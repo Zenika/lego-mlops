@@ -1,0 +1,25 @@
+prepare_data:
+  cmd: Rscript src/prepare_data.R
+  deps:
+  - path: data/lego-minifigures-classification
+    md5: a06679457b69c077a789ca5f69953f11.dir
+    size: 24474599
+    nfiles: 436
+  - path: src/prepare_data.R
+    md5: 208cde013dbafc03460a6028631db352
+    size: 1125
+  params:
+    params.yaml:
+      prepare_data:
+        input: data/lego-minifigures-classification
+        train_output: data/prepared/train
+        test_output: data/prepared/test
+  outs:
+  - path: data/prepared/test
+    md5: 17a272d67b2836647e22d04880dcf156.dir
+    size: 3279874
+    nfiles: 64
+  - path: data/prepared/train
+    md5: 500bf14a02d264e14921b81c082149d8.dir
+    size: 18560956
+    nfiles: 324
