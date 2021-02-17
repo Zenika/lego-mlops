@@ -31,16 +31,43 @@ train:
     size: 18560956
     nfiles: 324
   - path: src/train.R
-    md5: b76823ebb048ebb7ea538c9ecc732406
-    size: 2871
+    md5: e993b0d27c76122a5f0d4c679cb43d68
+    size: 3006
   params:
     params.yaml:
       train:
-        input: data/prepared
+        input: data/prepared/train
         model: data/model
         batch_size: 16
         num_epochs: 10
   outs:
   - path: data/model
-    md5: 40e9286e47d2532bf86b463a92665f8c
-    size: 45006138
+    md5: 2c3444ce6e22f86592bea0c02dc89425
+    size: 45063691
+evaluate:
+  cmd: Rscript src/evaluate.R
+  deps:
+  - path: data/model
+    md5: 2c3444ce6e22f86592bea0c02dc89425
+    size: 45063691
+  - path: data/prepared/test
+    md5: 17a272d67b2836647e22d04880dcf156.dir
+    size: 3279874
+    nfiles: 64
+  - path: src/evaluate.R
+    md5: 309dc7451a2bac325494e0a513a2057d
+    size: 2699
+  params:
+    params.yaml:
+      evaluate:
+        test_dataset: data/prepared/test
+        model: data/model
+        metrics: metrics.json
+        confusion_matrix: confusion_matrix.png
+  outs:
+  - path: confusion_matrix.png
+    md5: 3662f39680e4a36bcca80c7919b1441e
+    size: 22175
+  - path: metrics.json
+    md5: 8ab1fa40bfd1e6bf7bba4dd5fbe24ad9
+    size: 20

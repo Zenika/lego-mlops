@@ -13,3 +13,4 @@ evaluate:
   test_dataset: data/prepared/test
   model: data/model
   metrics: metrics.json
+  confusion_matrix: confusion_matrix.png

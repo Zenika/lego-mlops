@@ -18,3 +18,15 @@ stages:
     - train
     outs:
     - data/model
+  evaluate:
+    cmd: Rscript src/evaluate.R
+    deps:
+    - data/model
+    - data/prepared/test
+    - src/evaluate.R
+    params:
+    - evaluate
+    outs:
+    - confusion_matrix.png
+    metrics:
+    - metrics.json

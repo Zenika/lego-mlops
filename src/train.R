@@ -9,6 +9,8 @@ library(magick)
 params <- yaml.load_file('params.yaml')
 train_dir <- params$train$input
 
+torch_manual_seed(42)
+
 device <- if (cuda_is_available()) torch_device("cuda:0") else "cpu"
 print(device)
 
@@ -53,6 +55,7 @@ train_ds <- image_folder_dataset(
   train_dir,
   transform = train_transforms)
 class_names <- train_ds$classes
+message(paste("Training on", length(class_names), "classes (", paste(class_names, sep=",", collapse=","), ")"))
 
 batch_size <- params$train$batch_size
 train_dl <- dataloader(train_ds, batch_size = batch_size, shuffle = TRUE)
