@@ -80,7 +80,7 @@ writeLines(toJSON(list(accuracy = accuracy), auto_unbox=TRUE), metric_file)
 close(metric_file)
 
 # Confusion matrix
-cm <- table(as.factor(observations), as.factor(predictions), dnn = c('predictions', 'observations'))
+cm <- table(as.factor(observations), as.factor(predictions), dnn = c('observations', 'predictions'))
 cm_as_df <- as.data.frame(cm)
 
 png(params$evaluate$confusion_matrix)
