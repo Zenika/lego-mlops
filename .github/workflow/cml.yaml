@@ -1,0 +1,19 @@
+name: model-training
+on: [push]
+jobs:
+  run:
+    runs-on: [ubuntu-latest]
+    container: docker://geraudster/lego-mlops-runner:latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: cml_run
+        env:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+        run: |
+          pipenv run dvc repro
+
+          cat metrics.json >> report.md
+          cml-publish confusion_matrix.png --md >> report.md
+          cml-send-comment report.md
