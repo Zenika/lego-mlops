@@ -30,3 +30,9 @@ stages:
     - confusion_matrix.png
     metrics:
     - metrics.json
+  load_data:
+    cmd: Rscript src/load_data.R
+    outs:
+    - data/lego-minifigures-classification
+    deps:
+    - src/load_data.R

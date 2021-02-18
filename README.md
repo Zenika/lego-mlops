@@ -10,6 +10,7 @@ This repository shows the use of DVC on the [Lego mini-figure dataset](https://w
 * `libmagick++-dev`
 * Python 3.8
 * pipenv (`pip3 install pipenv`)
+* A kaggle API key (see [instructions](https://github.com/Kaggle/kaggle-api#api-credentials))
 
 Or use docker image from [lego-mlops-runner](https://github.com/Zenika/lego-mlops-runner)
 

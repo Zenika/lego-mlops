@@ -42,14 +42,14 @@ train:
         num_epochs: 10
   outs:
   - path: data/model
-    md5: 2c3444ce6e22f86592bea0c02dc89425
-    size: 45063691
+    md5: 547c5fd9b4e2a490ee8ed82e4899aae0
+    size: 45065287
 evaluate:
   cmd: Rscript src/evaluate.R
   deps:
   - path: data/model
-    md5: 2c3444ce6e22f86592bea0c02dc89425
-    size: 45063691
+    md5: 547c5fd9b4e2a490ee8ed82e4899aae0
+    size: 45065287
   - path: data/prepared/test
     md5: 17a272d67b2836647e22d04880dcf156.dir
     size: 3279874
@@ -66,8 +66,19 @@ evaluate:
         confusion_matrix: confusion_matrix.png
   outs:
   - path: confusion_matrix.png
-    md5: 3662f39680e4a36bcca80c7919b1441e
-    size: 22175
+    md5: a9fbbe7475f61453fc69b94eda7001a3
+    size: 21710
   - path: metrics.json
-    md5: 8ab1fa40bfd1e6bf7bba4dd5fbe24ad9
-    size: 20
+    md5: f6dd21702202d33ae54684e48daf2c5d
+    size: 19
+load_data:
+  cmd: Rscript src/load_data.R
+  deps:
+  - path: src/load_data.R
+    md5: 04f562b450508fc4747a35d5b9cbdca9
+    size: 213
+  outs:
+  - path: data/lego-minifigures-classification
+    md5: a06679457b69c077a789ca5f69953f11.dir
+    size: 24474599
+    nfiles: 436
