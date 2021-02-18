@@ -12,6 +12,8 @@ jobs:
           KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
           KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
         run: |
+          Rscript -e "install.packages('renv'); renv::init(); renv::restore(); torch::install_torch()"
+          pipenv --python 3.8 sync
           pipenv run dvc repro
 
           cat metrics.json >> report.md
