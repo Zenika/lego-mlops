@@ -2,7 +2,7 @@ name: model-training
 on: [push]
 jobs:
   run:
-    runs-on: [ubuntu-latest]
+    runs-on: [self-hosted]
     container: docker://geraudster/lego-mlops-runner:latest
     steps:
       - uses: actions/checkout@v2
