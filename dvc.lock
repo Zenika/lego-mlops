@@ -55,7 +55,7 @@ evaluate:
     size: 3279874
     nfiles: 64
   - path: src/evaluate.R
-    md5: 309dc7451a2bac325494e0a513a2057d
+    md5: 12ededb159a738bc96a2766d3037bcb1
     size: 2699
   params:
     params.yaml:
@@ -66,8 +66,8 @@ evaluate:
         confusion_matrix: confusion_matrix.png
   outs:
   - path: confusion_matrix.png
-    md5: a9fbbe7475f61453fc69b94eda7001a3
-    size: 21710
+    md5: e67cd2ba4c5b09ce0532e0da73af6313
+    size: 17785
   - path: metrics.json
     md5: f6dd21702202d33ae54684e48daf2c5d
     size: 19
