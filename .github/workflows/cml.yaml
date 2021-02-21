@@ -3,7 +3,9 @@ on: [push]
 jobs:
   run:
     runs-on: [self-hosted]
-    container: docker://geraudster/lego-mlops-runner:latest
+    container:
+      image: docker://geraudster/lego-mlops-runner:latest
+      options: -v /home/geraud/lego-mlops-cache:/home/geraud/lego-mlops-cache:rw
     steps:
       - uses: actions/checkout@v2
       - name: cml_run
@@ -14,6 +16,7 @@ jobs:
         run: |
           Rscript -e "install.packages('renv'); renv::init(); renv::restore(); torch::install_torch()"
           pipenv --python 3.8 sync
+          pipenv run dvc pull --run-cache
           pipenv run dvc repro
 
           echo '## Metrics' >> report.md
