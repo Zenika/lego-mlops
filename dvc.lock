@@ -31,25 +31,26 @@ train:
     size: 18560956
     nfiles: 324
   - path: src/train.R
-    md5: e993b0d27c76122a5f0d4c679cb43d68
-    size: 3006
+    md5: fbb880ca8dc79aee1175ddb25af89b54
+    size: 3139
   params:
     params.yaml:
       train:
         input: data/prepared/train
         model: data/model
-        batch_size: 16
-        num_epochs: 5
+        batch_size: 64
+        num_epochs: 20
+        lr: 1e-06
   outs:
   - path: data/model
-    md5: 5b3b7c17d0282dae32c38ad4d288bede
-    size: 45063597
+    md5: 94cb78513d2d464914cfa29d80904478
+    size: 535687965
 evaluate:
   cmd: Rscript src/evaluate.R
   deps:
   - path: data/model
-    md5: 5b3b7c17d0282dae32c38ad4d288bede
-    size: 45063597
+    md5: 94cb78513d2d464914cfa29d80904478
+    size: 535687965
   - path: data/prepared/test
     md5: 17a272d67b2836647e22d04880dcf156.dir
     size: 3279874
@@ -66,10 +67,10 @@ evaluate:
         confusion_matrix: confusion_matrix.png
   outs:
   - path: confusion_matrix.png
-    md5: 6835e8876c97c39c8baf2c1f61249d4b
-    size: 14852
+    md5: 14fa0a9e5abb814e910029065d60645d
+    size: 19837
   - path: metrics.json
-    md5: e8095fd3c2a718c57da4ab64f54948e2
+    md5: ab3e12372de305ac6e6d9cb1e038e962
     size: 20
 load_data:
   cmd: Rscript src/load_data.R
