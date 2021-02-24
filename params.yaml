@@ -6,8 +6,9 @@ prepare_data:
 train:
   input: data/prepared/train
   model: data/model
-  batch_size: 16
-  num_epochs: 2
+  batch_size: 64
+  num_epochs: 20
+  lr: 0.000001
 
 evaluate:
   test_dataset: data/prepared/test

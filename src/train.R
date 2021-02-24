@@ -60,22 +60,23 @@ message(paste("Training on", length(class_names), "classes (", paste(class_names
 batch_size <- params$train$batch_size
 train_dl <- dataloader(train_ds, batch_size = batch_size, shuffle = TRUE)
 
-
-model <- model_resnet18(pretrained = TRUE)
-
+options(timeout=3600)
+model <- model_vgg16_bn(pretrained = TRUE)
+model$classifier
 model$parameters %>% purrr::walk(function(param) param$requires_grad_(FALSE))
 
 # Replace output layer
-num_features <- model$fc$in_features
-model$fc <- nn_linear(in_features = num_features, out_features = length(class_names))
-
+num_features <- model$classifier$`6`$in_features
+message(paste("Num features", num_features))
+model$classifier$`6` <- nn_linear(in_features = num_features, out_features = length(class_names))
+model$classifier
 # Configure device
 model <- model$to(device = device)
 
 # Prepare training
 
 criterion <- nn_cross_entropy_loss()
-optimizer <- optim_sgd(model$parameters, lr = 0.05, momentum = 0.9)
+optimizer <- optim_sgd(model$parameters, lr = params$train$lr, momentum = 0.9)
 
 # Scheduler init
 
