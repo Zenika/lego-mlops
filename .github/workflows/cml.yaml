@@ -20,9 +20,9 @@ jobs:
           pipenv run dvc repro
 
           echo '## Metrics' >> report.md
-          pipenv run dvc metrics diff --all --show-md >> report.md
+          pipenv run dvc metrics diff main --show-md >> report.md
           echo '## Params' >> report.md
-          pipenv run dvc params diff --show-md >> report.md
+          pipenv run dvc params diff main --show-md >> report.md
           echo '## Confusion matrix' >> report.md
           cml-publish confusion_matrix.png --md >> report.md
           cml-send-comment report.md
